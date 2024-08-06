@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自製輪播圖與導覽列</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        /* 基本樣式 */
+        body,
+        html {
+            background-color: #f8f6ed;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            display: flex;
+            /* 使用 flexbox 布局 */
+            align-items: center;
+            border: 1px solid #1285c5;
+            background-color: #f8f6ed;
+            justify-content: space-between;
+            padding: 10px 20px;
+
+        }
+
+        .navbar a {
+            color: #1285c5;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            position: relative;
+            /* 定位偽元素*/
+            display: inline-block;
+            /* 使偽元素可在內部對齊 */
+            transition: transform 0.3s ease;
+            /* 字體浮動效果 */
+        }
+
+        header .nav-link {
+            text-decoration: none;
+            padding: 10px;
+            color: #1285c5;
+            font-size: 20px;
+        }
+
+        .navbar a:hover {
+            color: black;
+            transform: translateY(-3px);
+            /* 字體上浮 */
+        }
+
+        /* 底線效果偽元素 */
+        .navbar a::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            background-color: #1285c5;
+            transition: width 0.3s ease, left 0.3s ease;
+            /* 動畫效果 */
+        }
+
+        /* 懸停時的底線效果 */
+        .navbar a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        /* 輪播圖樣式 */
+        .carousel {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: none;
+            /* 預設隱藏 */
+        }
+
+        .carousel img.active {
+            display: block;
+            /* 顯示活動圖片 */
+        }
+
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-button {
+            background-color: rgba(0, 0, 0, 0.5);
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        /* 指示器樣式 */
+        .carousel-indicators {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+
+        .carousel-indicators button {
+            background-color: #555;
+            border: none;
+            width: 12px;
+            height: 12px;
+            margin: 2px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .carousel-indicators .active {
+            background-color: #fff;
+        }
+
+        .mytitle {
+            display: inline-block;
+            width: 100%;
+            color: #1285c5;
+            padding: 10px;
+        }
+
+        /* 卡片樣式 */
+        .card-section {
+            max-width: 1340px;
+            margin: 0 auto;
+            padding: 10px;
+            width: 100%;
+
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 20px;
+        }
+
+        .card {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 15px;
+            overflow: hidden;
+        }
+
+        .card-img img{
+            /* width: 300px; */
+            height: 300px;
+            display: block;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+        }
+
+        /*.card-info {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* 名稱對齊中間 */
+        /* 製作hover字體浮現動態 */
+        /* opacity: 0;
+            transition: opacity 0.5s ease;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        } */
+
+        /* .card:hover img {
+            transform: scale(1.1);
+        } */
+
+        /* .card-info:hover {
+            opacity: 1;
+        } */
+
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .footer-section {
+            flex: 1 1 200px;
+            margin: 10px;
+        }
+
+        .footer-section h4 {
+            border-bottom: 2px solid #fff;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-section ul li {
+            margin: 5px 0;
+        }
+
+        .footer-section ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .footer-section ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #555;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 導覽列 -->
+    <header>
+        <div class="myLogo">logo</div>
+        <nav class="navbar">
+            <a href="#">首頁</a>
+            <a href="#">展覽</a>
+            <a href="#">工作坊</a>
+            <a href="#">劇團表演</a>
+        </nav>
+        <div>
+            <a class="nav-link" href="#">
+                <i class="bi bi-facebook p-2"></i>
+            </a>
+            <a class="nav-link" href="#">
+                <i class="bi bi-instagram p-2"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- 輪播圖 -->
+    <div class="carousel">
+        <img src="./img/劇場/星星戲樂_01.jpeg" class="active" alt="Slide 1">
+        <img src="./img/展覽/music-island_02.jpeg" alt="Slide 2">
+        <img src="./img/展覽/裸花蓮_01.jpeg" alt="Slide 3">
+
+        <!-- 左右切換按鈕 -->
+        <div class="carousel-buttons">
+            <button class="carousel-button prev">❮</button>
+            <button class="carousel-button next">❯</button>
+        </div>
+
+        <!-- 指示器 -->
+        <div class="carousel-indicators">
+            <button class="active" data-slide="0"></button>
+            <button data-slide="1"></button>
+            <button data-slide="2"></button>
+        </div>
+    </div>
+
+    <section class="card-section">
+        <h2 class="mytitle">最新展覽</h2>
+        <div class="card">
+            <div class="card-img">
+                <img src="./img/展覽/ocean_01.jpeg" alt="Exhibition 1">
+            </div>
+            <div class="card-info">
+                <h3>2024 U-108 SPACE 展演創作計畫－「海」</h3>
+                <p>反思性沉浸式劇場
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <img src=".//img/展覽/music-island_03.jpeg" alt="Exhibition 2">
+            </div>
+            <div class="card-info">
+                <h3>唱 我們的歌 流行音樂故事展 MUSIC, ISLAND, STORIES: Pop Music in Taiwan</h3>
+                <p>不論你是 Rocker 還是憤青，不論你是小清新還是追夢人，每個人心裡一定都有一首屬於自己的歌，一定會在這裡找到屬於自己的故事。
+                </p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <img src="./img/展覽/元宇宙_00.jpg" alt="Exhibition 3">
+            </div>
+            <div class="card-info">
+                <h3>展覽名稱 3</h3>
+                <p>展覽資訊描述 3</p>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <img src="./img/展覽/東門町_01.webp" alt="Exhibition 4">
+            </div>
+            <div class="card-info">
+                <h3>展覽名稱 4</h3>
+                <p>展覽資訊描述 4</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>關於我們</h4>
+                <p>這裡是關於我們的簡短介紹。</p>
+            </div>
+            <div class="footer-section">
+                <h4>聯繫我們</h4>
+                <p>電子郵件: info@example.com</p>
+                <p>電話: (123) 456-7890</p>
+            </div>
+            <div class="footer-section">
+                <h4>社交媒體</h4>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 你的網站名稱. 保留所有權利。</p>
+        </div>
+    </footer>
+
+    <script>
+        // 簡單的輪播圖功能
+        const images = document.querySelectorAll('.carousel img');
+        const indicators = document.querySelectorAll('.carousel-indicators button');
+        let currentIndex = 0;
+
+        function showSlide(index) {
+            images.forEach((img, i) => {
+                img.classList.toggle('active', i === index);
+                indicators[i].classList.toggle('active', i === index);
+            });
+        }
+
+        document.querySelector('.prev').addEventListener('click', () => {
+            currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+            showSlide(currentIndex);
+        });
+
+        document.querySelector('.next').addEventListener('click', () => {
+            currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+            showSlide(currentIndex);
+        });
+
+        indicators.forEach((indicator, i) => {
+            indicator.addEventListener('click', () => {
+                currentIndex = i;
+                showSlide(currentIndex);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

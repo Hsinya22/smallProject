@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>導覽列動畫效果</title>
+  <style>
+    /* 基本樣式 */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    .navbar {
+      display: flex;
+      background-color: #333;
+      padding: 10px;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .navbar a {
+      color: white;
+      padding: 14px 20px;
+      text-decoration: none;
+      text-align: center;
+      position: relative; /* 為了定位偽元素 */
+      display: inline-block; /* 使偽元素可在內部對齊 */
+      transition: transform 0.3s ease; /* 字體浮動效果 */
+    }
+    .navbar a:hover {
+      transform: translateY(-3px); /* 字體上浮 */
+    }
+    .navbar a::after {
+      content: ''; /* 必須有這個屬性 */
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: white; /* 確保顏色與連結的顏色對比明顯 */
+      transition: width 0.3s ease, left 0.3s ease; /* 動畫效果 */
+    }
+    .navbar a:hover::after {
+      width: 100%;
+      left: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 導覽列 -->
+  <div class="navbar">
+    <a href="#">首頁</a>
+    <a href="#">展覽</a>
+    <a href="#">工作坊</a>
+    <a href="#">劇團表演</a>
+  </div>
+
+</body>
+</html>
