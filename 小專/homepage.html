@@ -160,15 +160,23 @@
             overflow: hidden;
         }
 
-        .card-img img{
-            /* width: 300px; */
+        /* 圖片容器 */
+        .card-img {
+            width: 100%;
             height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
             display: block;
-            object-fit: contain;
+            object-fit: cover;
             transition: transform 0.5s ease;
         }
 
-        /*.card-info {
+        .card-info {
             position: absolute;
             top: 0;
             left: 0;
@@ -181,21 +189,21 @@
             align-items: center;
             justify-content: center;
             /* 名稱對齊中間 */
-        /* 製作hover字體浮現動態 */
-        /* opacity: 0;
+            /* 製作hover字體浮現動態 */
+            opacity: 0;
             transition: opacity 0.5s ease;
             padding: 20px;
             box-sizing: border-box;
             text-align: center;
-        } */
+        }
 
-        /* .card:hover img {
+        .card:hover img {
             transform: scale(1.1);
-        } */
+        }
 
-        /* .card-info:hover {
+        .card-info:hover {
             opacity: 1;
-        } */
+        }
 
 
         .footer {
