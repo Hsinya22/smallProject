@@ -1,0 +1,375 @@
+ /* 基本樣式 */
+ body,
+ html {
+     background-color: #f8f6ed;
+     margin: 0;
+     padding: 0;
+     font-family: Arial, sans-serif;
+ }
+
+ header {
+     display: flex;
+     /* 使用 flexbox 布局 */
+     align-items: center;
+     border: 1px solid #1285c5;
+     background-color: #f8f6ed;
+     justify-content: space-between;
+     padding: 10px 20px;
+
+ }
+
+ .navbar a {
+     color: #1285c5;
+     padding: 14px 20px;
+     text-decoration: none;
+     text-align: center;
+     position: relative;
+     /* 定位偽元素*/
+     display: inline-block;
+     /* 使偽元素可在內部對齊 */
+     transition: transform 0.3s ease;
+     /* 字體浮動效果 */
+ }
+
+ header .nav-link {
+     text-decoration: none;
+     padding: 10px;
+     color: #1285c5;
+     font-size: 20px;
+ }
+
+ .navbar a:hover {
+     color: black;
+     transform: translateY(-3px);
+     /* 字體上浮 */
+ }
+
+ /* 底線效果偽元素 */
+ .navbar a::after {
+     content: '';
+     position: absolute;
+     left: 50%;
+     bottom: 0;
+     width: 0;
+     height: 1px;
+     background-color: #1285c5;
+     transition: width 0.3s ease, left 0.3s ease;
+     /* 動畫效果 */
+ }
+
+ /* 懸停時的底線效果 */
+ .navbar a:hover::after {
+     width: 100%;
+     left: 0;
+ }
+
+ /* 輪播圖樣式 */
+ .carousel {
+     position: relative;
+     max-width: 100%;
+     overflow: hidden;
+ }
+
+ .carousel img {
+     width: 100%;
+     height: 400px;
+     object-fit: cover;
+     display: none;
+     /* 預設隱藏 */
+ }
+
+ .carousel img.active {
+     display: block;
+     /* 顯示活動圖片 */
+ }
+
+ .carousel-buttons {
+     position: absolute;
+     top: 50%;
+     width: 100%;
+     display: flex;
+     justify-content: space-between;
+     transform: translateY(-50%);
+ }
+
+ .carousel-button {
+     background-color: rgba(0, 0, 0, 0.5);
+     border: none;
+     color: white;
+     padding: 10px;
+     cursor: pointer;
+ }
+
+ /* 指示器樣式 */
+ .carousel-indicators {
+     position: absolute;
+     bottom: 10px;
+     left: 50%;
+     transform: translateX(-50%);
+     display: flex;
+ }
+
+ .carousel-indicators button {
+     background-color: #555;
+     border: none;
+     width: 12px;
+     height: 12px;
+     margin: 2px;
+     border-radius: 50%;
+     cursor: pointer;
+ }
+
+ .carousel-indicators .active {
+     background-color: #fff;
+ }
+
+ .mytitle {
+     display: inline-block;
+     width: 100%;
+     color: #1285c5;
+     padding: 10px;
+ }
+
+ /* 卡片樣式 */
+ .card-section {
+     max-width: 1400px;
+     margin: 0 auto;
+     /* 自動分配左右的 margin，使容器居中 */
+     padding: 0, 10px;
+     width: 100%;
+     /* 使容器寬度為父元素的100% */
+
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+ }
+
+ .card {
+     position: relative;
+     width: 300px;
+     height: 300px;
+     margin: 15px;
+     overflow: hidden;
+ }
+
+ /* 圖片容器 */
+ .card-img {
+     width: 100%;
+     height: 300px;
+     overflow: hidden;
+     position: relative;
+ }
+
+ .card-img img {
+     width: 100%;
+     height: 100%;
+     display: block;
+     object-fit: cover;
+     transition: transform 0.5s ease;
+ }
+
+ .card-info {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-color: rgba(0, 0, 0, 0.6);
+     color: white;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     /* 名稱對齊中間 */
+     /* 製作hover字體浮現動態 */
+     opacity: 0;
+     transition: opacity 0.5s ease;
+     padding: 20px;
+     box-sizing: border-box;
+     text-align: center;
+ }
+
+ .card:hover img {
+     transform: scale(1.1);
+ }
+
+ .card-info:hover {
+     opacity: 1;
+ }
+
+ .show-section {
+    /* background-color: gray; */
+    max-width: 1430px; 
+    margin: 0 auto;
+    display: flex;
+     flex-wrap: wrap;
+     /* 因為使用了flexbox，可以用gap來設置卡片間距 */
+     gap: 10px;
+     justify-content: center;
+     /* margin: 50px; */
+     width: 100%;
+ }
+
+ .show-card {
+     /* background-color: #1285c5; */
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+     transition: 0.3s;
+     /* 設置圓角 */
+     border-radius: 25px; 
+     position: relative;
+     width: 400px;
+     height: 300px;
+     margin: 15px;
+     overflow: hidden;
+ }
+
+.show-card:hover{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2)
+}
+ .show-img {
+     width: 100%;
+     height: 150px;
+ }
+
+ .show-img img {
+    /* 因為外圍圓角裡面也要有圓角 */
+    border-radius: 25px 25px 0 0;
+     width: 100%;
+     height: 100%;
+     object-fit: fill;
+     transition: transform 0.5s ease;
+ }
+
+ .show-card:hover img{
+    transform: scale(1.1);
+ }
+ .show-info{
+    background-color: #f8f6ed;
+    margin:15px;
+ }
+.workshop-Section{
+    position: relative;
+    /* background-color: #81adc5; */
+    max-width: 1430px;
+    margin: 20px auto;
+    overflow: hidden;
+    justify-content: center;
+ }
+
+ .mySlide{
+    display:none;
+ }
+.workshopCard{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #1285c5;
+    border-radius: 8px;
+    /* gap: 20px; */
+}
+
+.workshop-img{
+    background-color: #555;
+    flex: 1;
+    overflow: hidden;
+    min-width: 50px; 
+}
+.workshop-img img{
+    width:100%;
+    height: 100%;
+    display: block; 
+}
+
+.workshop-info{
+    flex: 1;
+} 
+
+.workshop-info{
+    /* background-color: #fff; */
+    margin: 10px;
+}
+.action-btn{
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 15px;
+    border: 2px none #1285c5;
+    color: #1285c5;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+}
+.action-btn:hover{
+    background-color:  #1285c5;
+    color: white;
+}
+
+/* 工作坊輪播圖 */
+.prev01, .next01{
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+/* 讓下一頁按鈕到右邊 */
+.next01{
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev01:hover, .next01:hover{
+    background-color: #555;
+}
+ .footer {
+     background-color: #333;
+     color: #fff;
+     padding: 20px;
+     text-align: center;
+ }
+
+ .footer-content {
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: space-around;
+     margin-bottom: 20px;
+ }
+
+ .footer-section {
+     flex: 1 1 200px;
+     margin: 10px;
+ }
+
+ .footer-section h4 {
+     border-bottom: 2px solid #fff;
+     padding-bottom: 10px;
+     margin-bottom: 10px;
+ }
+
+ .footer-section ul {
+     list-style: none;
+     padding: 0;
+ }
+
+ .footer-section ul li {
+     margin: 5px 0;
+ }
+
+ .footer-section ul li a {
+     color: #fff;
+     text-decoration: none;
+ }
+
+ .footer-section ul li a:hover {
+     text-decoration: underline;
+ }
+
+ .footer-bottom {
+     border-top: 1px solid #555;
+     padding: 10px 0;
+ }
