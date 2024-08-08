@@ -1,39 +1,9 @@
-// 簡單的輪播圖功能
-const images = document.querySelectorAll('.carousel img');
-const indicators = document.querySelectorAll('.carousel-indicators button');
-let currentIndex = 0;
-
-function showSlide(index) {
-    images.forEach((img, i) => {
-        img.classList.toggle('active', i === index);
-        indicators[i].classList.toggle('active', i === index);
-    });
-}
-
-document.querySelector('.prev').addEventListener('click', () => {
-    currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
-    showSlide(currentIndex);
-});
-
-document.querySelector('.next').addEventListener('click', () => {
-    currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
-    showSlide(currentIndex);
-});
-
-indicators.forEach((indicator, i) => {
-    indicator.addEventListener('click', () => {
-        currentIndex = i;
-        showSlide(currentIndex);
-    });
-});
-
-// 工作坊輪播圖
 document.addEventListener("DOMContentLoaded", function() {
-    const carousel = document.querySelector(".myCarousel");
-    const arrowBtns = document.querySelectorAll(".myWrapper button");
-    const wrapper = document.querySelector(".myWrapper");
+    const carousel = document.querySelector(".carousel");
+    const arrowBtns = document.querySelectorAll(".wrapper i");
+    const wrapper = document.querySelector(".wrapper");
 
-    const firstCard = carousel.querySelector(".workshop-card");
+    const firstCard = carousel.querySelector(".card");
     const firstCardWidth = firstCard.offsetWidth;
 
     let isDragging = false,
@@ -103,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // scroll the carousel left and right
     arrowBtns.forEach(btn => {
         btn.addEventListener("click", () => {
-            carousel.scrollLeft += btn.id === "Left" ? 
+            carousel.scrollLeft += btn.id === "left" ? 
                 -firstCardWidth : firstCardWidth;
         });
     });

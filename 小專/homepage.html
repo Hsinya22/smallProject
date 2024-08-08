@@ -7,6 +7,7 @@
     <title>藝文活動首頁</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css/homepage_style.css">
+    <script src="./js/homepage.js" defer></script>
 </head>
 
 <body>
@@ -150,127 +151,74 @@
     <!-- 工作坊 -->
     <section class="workshop-section">
         <h2 class="mytitle">工作坊</h2>
-        <button class="arrow left" onclick="scrollLeft()">&#10094;</button>
-        <div class="mycard-wrapper">
-            <div class="workshop-card">
-                <div class="workshop-img">
-                    <img src="./img/工作坊/高雄步道修建_00.jpg" alt="">
+        <div class="myWrapper">
+            <button id="Left" class="arrow myleft"">&#10094;</button>
+            <div class=" myCarousel">
+                <div class="workshop-card">
+                    <div class="workshop-img">
+                        <img src="./img/工作坊/高雄步道修建_00.jpg" alt="" draggable="false">
+                    </div>
+                    <div class="workshop-info">
+                        <h4>南方出走日記 I'm Off Then｜手作步道 X 工作假期</h4>
+                        <p>經莫拉克風災重建後，思考土地與與人的關係，來寶來不只溫泉，還有深度的體驗行程
+                            炎炎夏日中，散步享受森林帶來的芬多精。
+                            這次跟我們一起到森林避暑吧！</p>
+                        <button class="action-btn">報名中</button>
+                    </div>
                 </div>
-                <div class="workshop-info">
-                    <h4>南方出走日記 I'm Off Then｜手作步道 X 工作假期</h4>
-                    <p>經莫拉克風災重建後，思考土地與與人的關係，來寶來不只溫泉，還有深度的體驗行程
-                        炎炎夏日中，散步享受森林帶來的芬多精。
-                        這次跟我們一起到森林避暑吧！</p>
-                    <button class="action-btn">報名中</button>
+                <div class="workshop-card">
+                    <div class="workshop-img">
+                        <img src="./img/工作坊/出城啦來去離島住一晚_01.jpg" alt="" draggable="false">
+                    </div>
+                    <div class="workshop-info">
+                        <h4>南方出走日記 I'm Off Then｜手作步道 X 工作假期</h4>
+                        <p>經莫拉克風災重建後，思考土地與與人的關係，來寶來不只溫泉，還有深度的體驗行程
+                            炎炎夏日中，散步享受森林帶來的芬多精。
+                            這次跟我們一起到森林避暑吧！</p>
+                        <button class="action-btn">報名中</button>
+                    </div>
                 </div>
-            </div>
-            <div class="workshop-card">
-                <div class="workshop-img">
-                    <img src="./img/工作坊/出城啦來去離島住一晚_01.jpg" alt="">
+                <div class="workshop-card">
+                    <div class="workshop-img">
+                        <img src="./img/工作坊/嘉義老屋活化_00.jpg" alt="" draggable="false">
+                    </div>
+                    <div class="workshop-info">
+                        <h4>南方出走日記 I'm Off Then｜手作步道 X 工作假期</h4>
+                        <p>經莫拉克風災重建後，思考土地與與人的關係，來寶來不只溫泉，還有深度的體驗行程
+                            炎炎夏日中，散步享受森林帶來的芬多精。
+                            這次跟我們一起到森林避暑吧！</p>
+                        <button class="action-btn">報名中</button>
+                    </div>
                 </div>
-                <div class="workshop-info">
-                    <h4>南方出走日記 I'm Off Then｜手作步道 X 工作假期</h4>
-                    <p>經莫拉克風災重建後，思考土地與與人的關係，來寶來不只溫泉，還有深度的體驗行程
-                        炎炎夏日中，散步享受森林帶來的芬多精。
-                        這次跟我們一起到森林避暑吧！</p>
-                    <button class="action-btn">報名中</button>
+                <div class="workshop-card">
+                    <div class="workshop-img">
+                        <img src="./img/工作坊/大家書房_00.jpg" alt="" draggable="false">
+                    </div>
+                    <div class="workshop-info">
+                        <h4>南方出走日記 I'm Off Then｜手作步道 X 工作假期</h4>
+                        <p>經莫拉克風災重建後，思考土地與與人的關係，來寶來不只溫泉，還有深度的體驗行程
+                            炎炎夏日中，散步享受森林帶來的芬多精。
+                            這次跟我們一起到森林避暑吧！</p>
+                        <button class="action-btn">報名中</button>
+                    </div>
                 </div>
-            </div>
-            <div class="workshop-card">
-                <div class="workshop-img">
-                    <img src="./img/工作坊/嘉義老屋活化_00.jpg" alt="">
+                <div class="workshop-card">
+                    <div class="workshop-img">
+                        <img src="./img/工作坊/大家書房_00.jpg" alt="" draggable="false">
+                    </div>
+                    <div class="workshop-info">
+                        <h4>南方出走日記 I'm Off Then｜手作步道 X 工作假期</h4>
+                        <p>經莫拉克風災重建後，思考土地與與人的關係，來寶來不只溫泉，還有深度的體驗行程
+                            炎炎夏日中，散步享受森林帶來的芬多精。
+                            這次跟我們一起到森林避暑吧！</p>
+                        <button class="action-btn">報名中</button>
+                    </div>
                 </div>
-                <div class="workshop-info">
-                    <h4>南方出走日記 I'm Off Then｜手作步道 X 工作假期</h4>
-                    <p>經莫拉克風災重建後，思考土地與與人的關係，來寶來不只溫泉，還有深度的體驗行程
-                        炎炎夏日中，散步享受森林帶來的芬多精。
-                        這次跟我們一起到森林避暑吧！</p>
-                    <button class="action-btn">報名中</button>
-                </div>
-            </div>
-            <div class="workshop-card">
-                <div class="workshop-img">
-                    <img src="./img/工作坊/大家書房_00.jpg" alt="">
-                </div>
-                <div class="workshop-info">
-                    <h4>南方出走日記 I'm Off Then｜手作步道 X 工作假期</h4>
-                    <p>經莫拉克風災重建後，思考土地與與人的關係，來寶來不只溫泉，還有深度的體驗行程
-                        炎炎夏日中，散步享受森林帶來的芬多精。
-                        這次跟我們一起到森林避暑吧！</p>
-                    <button class="action-btn">報名中</button>
-                </div>
-            </div>
-            <div class="workshop-card">
-                <div class="workshop-img">
-                    <img src="./img/工作坊/大家書房_00.jpg" alt="">
-                </div>
-                <div class="workshop-info">
-                    <h4>南方出走日記 I'm Off Then｜手作步道 X 工作假期</h4>
-                    <p>經莫拉克風災重建後，思考土地與與人的關係，來寶來不只溫泉，還有深度的體驗行程
-                        炎炎夏日中，散步享受森林帶來的芬多精。
-                        這次跟我們一起到森林避暑吧！</p>
-                    <button class="action-btn">報名中</button>
-                </div>
-            </div>
         </div>
-        <button onclick="scrollRight()" class="arrow right">&#10095;</button>
+        <button id="Right" class="arrow myright">&#10095;</>
+        </div>
     </section>
-    
-    <!-- <section class="workshop-Section">
-        <h2 class="mytitle">工作坊</h2>
-        <button class="arrow left" onclick="scrollLeft()">&#10094;</button>
-        <div class="myCard-wrapper">
-            <div class="workshopCard">
-                <div class="workshop-img">
-                    <img src="./img/工作坊/高雄步道修建_00.jpg" alt="">
-                </div>
-                <div class="workshop-info">
-                    <h4>南方出走日記 I'm Off Then｜手作步道 X 工作假期</h4>
-                    <p>經莫拉克風災重建後，思考土地與與人的關係，來寶來不只溫泉，還有深度的體驗行程
-                        炎炎夏日中，散步享受森林帶來的芬多精。
-                        這次跟我們一起到森林避暑吧！</p>
-                    <button class="action-btn">報名中</button>
-                </div>
-            </div>
-            <div class="workshopCard">
-                <div class="workshop-img">
-                    <img src="./img/工作坊/出城啦來去離島住一晚_01.jpg" alt="">
-                </div>
-                <div class="workshop-info">
-                    <h4>南方出走日記 I'm Off Then｜手作步道 X 工作假期</h4>
-                    <p>經莫拉克風災重建後，思考土地與與人的關係，來寶來不只溫泉，還有深度的體驗行程
-                        炎炎夏日中，散步享受森林帶來的芬多精。
-                        這次跟我們一起到森林避暑吧！</p>
-                    <button class="action-btn">報名中</button>
-                </div>
-            </div>
-            <div class="workshopCard">
-                <div class="workshop-img">
-                    <img src="./img/工作坊/嘉義老屋活化_00.jpg" alt="">
-                </div>
-                <div class="workshop-info">
-                    <h4>南方出走日記 I'm Off Then｜手作步道 X 工作假期</h4>
-                    <p>經莫拉克風災重建後，思考土地與與人的關係，來寶來不只溫泉，還有深度的體驗行程
-                        炎炎夏日中，散步享受森林帶來的芬多精。
-                        這次跟我們一起到森林避暑吧！</p>
-                    <button class="action-btn">報名中</button>
-                </div>
-            </div>
-            <div class="workshopCard">
-                <div class="workshop-img">
-                    <img src="./img/工作坊/大家書房_00.jpg" alt="">
-                </div>
-                <div class="workshop-info">
-                    <h4>南方出走日記 I'm Off Then｜手作步道 X 工作假期</h4>
-                    <p>經莫拉克風災重建後，思考土地與與人的關係，來寶來不只溫泉，還有深度的體驗行程
-                        炎炎夏日中，散步享受森林帶來的芬多精。
-                        這次跟我們一起到森林避暑吧！</p>
-                    <button class="action-btn">報名中</button>
-                </div>
-            </div>
-        </div>
-        <button class="arrow right" onclick="scrollRight()">&#10095;</button>
-    </section> -->
+
 
     <!-- 頁脚 -->
 
