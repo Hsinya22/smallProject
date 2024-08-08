@@ -16,7 +16,7 @@
         <div class="myLogo">logo</div>
         <nav class="navbar">
             <a href="#">首頁</a>
-            <a href="#">展覽</a>
+            <a href="#Exhibition">展覽</a>
             <a href="#">工作坊</a>
             <a href="#">劇團表演</a>
         </nav>
@@ -51,7 +51,7 @@
     </div>
 
     <section class="card-section">
-        <h2 class="mytitle">最新展覽</h2>
+        <h2 class="mytitle" id="Exhibition">最新展覽</h2>
         <div class="card">
             <div class="card-img">
                 <img src="./img/展覽/ocean_01.jpeg" alt="Exhibition 1">
@@ -101,6 +101,7 @@
         </div>
     </section>
     <hr>
+    <!-- 劇團表演 -->
     <section class="show-section" id="myShow">
         <h2 class="mytitle">劇場表演</h2>
         <div class="show-card">
@@ -146,10 +147,12 @@
         </div>
     </section>
     <hr>
-    <section class="workshop-Section">
+    <!-- 工作坊 -->
+    <section class="workshop-section">
         <h2 class="mytitle">工作坊</h2>
-        <div class="myCard-wrapper">
-            <div class="workshopCard active">
+        <button class="arrow left" onclick="scrollLeft()">&#10094;</button>
+        <div class="mycard-wrapper">
+            <div class="workshop-card">
                 <div class="workshop-img">
                     <img src="./img/工作坊/高雄步道修建_00.jpg" alt="">
                 </div>
@@ -161,7 +164,7 @@
                     <button class="action-btn">報名中</button>
                 </div>
             </div>
-            <div class="workshopCard active">
+            <div class="workshop-card">
                 <div class="workshop-img">
                     <img src="./img/工作坊/出城啦來去離島住一晚_01.jpg" alt="">
                 </div>
@@ -173,7 +176,7 @@
                     <button class="action-btn">報名中</button>
                 </div>
             </div>
-            <div class="workshopCard active">
+            <div class="workshop-card">
                 <div class="workshop-img">
                     <img src="./img/工作坊/嘉義老屋活化_00.jpg" alt="">
                 </div>
@@ -185,7 +188,7 @@
                     <button class="action-btn">報名中</button>
                 </div>
             </div>
-            <div class="workshopCard active">
+            <div class="workshop-card">
                 <div class="workshop-img">
                     <img src="./img/工作坊/大家書房_00.jpg" alt="">
                 </div>
@@ -197,22 +200,77 @@
                     <button class="action-btn">報名中</button>
                 </div>
             </div>
-            <!-- Next and previous buttons -->
-            <a class="prev01" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next01" onclick="plusSlides(1)">&#10095;</a>
+            <div class="workshop-card">
+                <div class="workshop-img">
+                    <img src="./img/工作坊/大家書房_00.jpg" alt="">
+                </div>
+                <div class="workshop-info">
+                    <h4>南方出走日記 I'm Off Then｜手作步道 X 工作假期</h4>
+                    <p>經莫拉克風災重建後，思考土地與與人的關係，來寶來不只溫泉，還有深度的體驗行程
+                        炎炎夏日中，散步享受森林帶來的芬多精。
+                        這次跟我們一起到森林避暑吧！</p>
+                    <button class="action-btn">報名中</button>
+                </div>
             </div>
-            <br>
-            <!-- The dots/circles -->
-            <div style="text-align:center">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-            </div>
-
-
+        </div>
+        <button onclick="scrollRight()" class="arrow right">&#10095;</button>
     </section>
-
-
+    
+    <!-- <section class="workshop-Section">
+        <h2 class="mytitle">工作坊</h2>
+        <button class="arrow left" onclick="scrollLeft()">&#10094;</button>
+        <div class="myCard-wrapper">
+            <div class="workshopCard">
+                <div class="workshop-img">
+                    <img src="./img/工作坊/高雄步道修建_00.jpg" alt="">
+                </div>
+                <div class="workshop-info">
+                    <h4>南方出走日記 I'm Off Then｜手作步道 X 工作假期</h4>
+                    <p>經莫拉克風災重建後，思考土地與與人的關係，來寶來不只溫泉，還有深度的體驗行程
+                        炎炎夏日中，散步享受森林帶來的芬多精。
+                        這次跟我們一起到森林避暑吧！</p>
+                    <button class="action-btn">報名中</button>
+                </div>
+            </div>
+            <div class="workshopCard">
+                <div class="workshop-img">
+                    <img src="./img/工作坊/出城啦來去離島住一晚_01.jpg" alt="">
+                </div>
+                <div class="workshop-info">
+                    <h4>南方出走日記 I'm Off Then｜手作步道 X 工作假期</h4>
+                    <p>經莫拉克風災重建後，思考土地與與人的關係，來寶來不只溫泉，還有深度的體驗行程
+                        炎炎夏日中，散步享受森林帶來的芬多精。
+                        這次跟我們一起到森林避暑吧！</p>
+                    <button class="action-btn">報名中</button>
+                </div>
+            </div>
+            <div class="workshopCard">
+                <div class="workshop-img">
+                    <img src="./img/工作坊/嘉義老屋活化_00.jpg" alt="">
+                </div>
+                <div class="workshop-info">
+                    <h4>南方出走日記 I'm Off Then｜手作步道 X 工作假期</h4>
+                    <p>經莫拉克風災重建後，思考土地與與人的關係，來寶來不只溫泉，還有深度的體驗行程
+                        炎炎夏日中，散步享受森林帶來的芬多精。
+                        這次跟我們一起到森林避暑吧！</p>
+                    <button class="action-btn">報名中</button>
+                </div>
+            </div>
+            <div class="workshopCard">
+                <div class="workshop-img">
+                    <img src="./img/工作坊/大家書房_00.jpg" alt="">
+                </div>
+                <div class="workshop-info">
+                    <h4>南方出走日記 I'm Off Then｜手作步道 X 工作假期</h4>
+                    <p>經莫拉克風災重建後，思考土地與與人的關係，來寶來不只溫泉，還有深度的體驗行程
+                        炎炎夏日中，散步享受森林帶來的芬多精。
+                        這次跟我們一起到森林避暑吧！</p>
+                    <button class="action-btn">報名中</button>
+                </div>
+            </div>
+        </div>
+        <button class="arrow right" onclick="scrollRight()">&#10095;</button>
+    </section> -->
 
     <!-- 頁脚 -->
 
@@ -241,71 +299,7 @@
         </div>
     </footer>
 
-    <script>
-        // 簡單的輪播圖功能
-        const images = document.querySelectorAll('.carousel img');
-        const indicators = document.querySelectorAll('.carousel-indicators button');
-        let currentIndex = 0;
-
-        function showSlide(index) {
-            images.forEach((img, i) => {
-                img.classList.toggle('active', i === index);
-                indicators[i].classList.toggle('active', i === index);
-            });
-        }
-
-        document.querySelector('.prev').addEventListener('click', () => {
-            currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
-            showSlide(currentIndex);
-        });
-
-        document.querySelector('.next').addEventListener('click', () => {
-            currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
-            showSlide(currentIndex);
-        });
-
-        indicators.forEach((indicator, i) => {
-            indicator.addEventListener('click', () => {
-                currentIndex = i;
-                showSlide(currentIndex);
-            });
-        });
-
-        // 工作坊輪播圖
-        let mySlideIndex = 1;
-        showSlide01(mySlideIndex);
-
-        function plusSlides(n) {
-            showSlide01(mySlideIndex += n);
-        }
-        // 此處是給圓點的函式
-        function currentSlide(n) {
-            showSlide01(mySlideIndex = n);
-        }
-
-        function showSlide01(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlide");
-            let dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {
-                mySlideIndex = 1;
-            }
-            if (n < 1) {
-                mySlideIndex = slides.length;
-            }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none"
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace("active", "");
-            }
-            slides[mySlideIndex - 1].style.display = "block";
-            dots[mySlideIndex - 1].className += "active";
-        }
-
-
-
-    </script>
+    <script src="./js/homepage.js"></script>
 
 </body>
 
