@@ -1,156 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>導覽列動畫效果</title>
-  <style>
-.carousel-container {
-    position: relative;
-    max-width: 800px;
-    margin: 0 auto;
-    overflow: hidden;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Nav</title>
+    <style>
+        /* Basic styling for the nav */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
 }
 
-.carousel-slide {
+nav .logo img {
+    height: 50px;
+}
+
+nav .menu {
+    display: flex;
+    gap: 20px;
+}
+
+nav .menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+nav .auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+nav .auth-buttons a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.menu-toggle {
     display: none;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-}
-
-.carousel-slide.active {
-    display: flex;
-}
-
-.image-wrapper {
-    width: 100%;
-    max-height: 300px;
-    overflow: hidden;
-}
-
-.image {
-    width: 100%;
-    height: auto;
-}
-
-.icon img {
-    width: 50px;
-    height: 50px;
-    margin: 10px 0;
-}
-
-.content h3 {
-    margin: 15px 0;
-}
-
-.content p {
-    margin: 10px 0;
-    color: #333;
-}
-
-.action-button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #1285c5;
-    color: white;
-    border: none;
-    border-radius: 5px;
     cursor: pointer;
 }
 
-.action-button:hover {
-    background-color: #0f6c9c;
+.menu-toggle span {
+    height: 3px;
+    background: white;
+    margin: 4px 0;
+    width: 25px;
 }
 
-.controls {
-    text-align: center;
-    margin-top: 20px;
-}
+/* Responsive design for mobile view */
+@media (max-width: 768px) {
+    .menu, .auth-buttons {
+        display: none;
+    }
 
-.controls button {
-    padding: 10px;
-    margin: 0 5px;
-    cursor: pointer;
-}
+    .menu-toggle {
+        display: flex;
+    }
 
-  </style>
+    .menu.active, .auth-buttons.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: #333;
+    }
+
+    .menu a, .auth-buttons a {
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #444;
+    }
+
+    .auth-buttons {
+        border-top: 1px solid #444;
+    }
+}
+    </style>
 </head>
 <body>
-  <div class="carousel-container">
-    <div class="carousel-slide active">
-        <div class="image-wrapper">
-            <img src="path/to/image1.jpg" alt="描述1" class="image">
+    <nav>
+        <div class="logo">
+            <img src="logo.png" alt="Logo">
         </div>
-        <div class="icon">
-            <img src="path/to/icon1.png" alt="圖示1">
+        <div class="menu">
+            <a href="#home">主頁</a>
+            <a href="#exhibition">展覽</a>
+            <a href="#workshop">工作坊</a>
         </div>
-        <div class="content">
-            <h3>講解標題1</h3>
-            <p>這是第一張圖片的講解內容。</p>
-            <button class="action-button">按鈕1</button>
+        <div class="auth-buttons">
+            <a href="#login" class="login-btn">登入</a>
+            <a href="#register" class="register-btn">註冊</a>
         </div>
-    </div>
-    <div class="carousel-slide">
-        <div class="image-wrapper">
-            <img src="./img/工作坊/出城啦_01.jpg" alt="描述2" class="image">
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
-        <div class="icon">
-            <img src="path/to/icon2.png" alt="圖示2">
-        </div>
-        <div class="content">
-            <h3>講解標題2</h3>
-            <p>這是第二張圖片的講解內容。</p>
-            <button class="action-button">按鈕2</button>
-        </div>
-    </div>
-    <div class="carousel-slide">
-        <div class="image-wrapper">
-            <img src="path/to/image3.jpg" alt="描述3" class="image">
-        </div>
-        <div class="icon">
-            <img src="path/to/icon3.png" alt="圖示3">
-        </div>
-        <div class="content">
-            <h3>講解標題3</h3>
-            <p>這是第三張圖片的講解內容。</p>
-            <button class="action-button">按鈕3</button>
-        </div>
-    </div>
-</div>
+    </nav>
 
-<div class="controls">
-    <button onclick="previousSlide()">上一步</button>
-    <button onclick="nextSlide()">下一步</button>
-</div>
-
-
-<script>
- let currentIndex = 0;
-const slides = document.querySelectorAll('.carousel-slide');
-
-function showSlide(index) {
-    slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
+    <script>document.addEventListener('DOMContentLoaded', () => {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const menu = document.querySelector('.menu');
+        const authButtons = document.querySelector('.auth-buttons');
+    
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            authButtons.classList.toggle('active');
+        });
     });
-}
-
-function nextSlide() {
-    currentIndex = (currentIndex + 1) % slides.length;
-    showSlide(currentIndex);
-}
-
-function previousSlide() {
-    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-    showSlide(currentIndex);
-}
-
-// 初始顯示第一個 slide
-showSlide(currentIndex);
-
-</script>
+    </script>
 </body>
 </html>

@@ -1,3 +1,14 @@
+// 導覽列
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+      x.className += " responsive";
+    } else {
+      x.className = "topnav";
+    }
+  }
+
+
 // 簡單的輪播圖功能
 const images = document.querySelectorAll('.carousel img');
 const indicators = document.querySelectorAll('.carousel-indicators button');
@@ -108,3 +119,8 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+// 展覽卡片跳新分頁
+function openNewTabExhibit02() {
+    window.open('exhibition_01.html', '_blank');
+}

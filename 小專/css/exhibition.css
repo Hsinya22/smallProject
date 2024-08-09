@@ -96,7 +96,8 @@ aside {
     height: 100%;
     object-fit: cover;
 }
-.exhibit-right-card{
+
+.exhibit-right-card {
     border: 1px solid lightgrey;
     border-radius: 10px;
     /* height: 300px; */
@@ -105,11 +106,13 @@ aside {
     text-align: center;
     max-height: auto;
 }
-.rightcard-info{
+
+.rightcard-info {
     position: relative;
     margin-bottom: 30px;
 }
-.exhibit-right-card a{
+
+.exhibit-right-card a {
     /* display: block; */
     text-decoration: none;
     color: white;
@@ -138,27 +141,74 @@ aside {
 }
 
 .exhibit-info h3 {
-    color:#007598;
+    color: #007598;
     display: flex;
     align-items: center;
     gap: 8px;
     /* 根據需要調整間距 */
 }
-.exhibit-content{
+
+.exhibit-content {
     /* background-color: #00AFB9; */
     border: 1px dashed #1285c5;
     border-radius: 10px;
     padding: 10px;
 
 }
-.exhibit-intro span{
+
+.exhibit-intro span {
     color: #F07167;
     font-size: 20px;
     font-weight: bold;
 
 }
 
-.first-site{
-    width: 300px;
+/* 展區介紹 */
+/* Style the tab */
+.mytab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  
+  /* Style the buttons that are used to open the tab content */
+  .mytab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+  }
+  
+  /* Change background color of buttons on hover */
+  .mytab button:hover {
+    background-color: #ddd;
+  }
+  
+  /* Create an active/current tablink class */
+  .mytab button.active {
+    background-color: #ccc;
+  }
+  
+  /* Style the tab content */
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+  }
 
-}
+  /* tab content裡面的照片 */
+  .area-img{
+    background-color: #00AFB9;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+  }
+  .area-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }

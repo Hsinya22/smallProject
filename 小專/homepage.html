@@ -13,7 +13,7 @@
 <body>
 
     <!-- 導覽列 -->
-    <header>
+    <header class="topnav" id="myTopnav">
         <div class="myLogo">logo</div>
         <nav class="navbar">
             <a href="#">首頁</a>
@@ -28,6 +28,7 @@
             <a class="nav-link" href="#">
                 <i class="bi bi-instagram p-2"></i>
             </a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
         </div>
     </header>
 
@@ -63,8 +64,8 @@
                 </p>
             </div>
         </div>
-        <div class="card">
-            <div class="card-img">
+        <div class="card" onclick="openNewTabExhibit02()">
+            <div class="card-img" >
                 <img src=".//img/展覽/music-island_03.jpeg" alt="Exhibition 2">
             </div>
             <div class="card-info">
