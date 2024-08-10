@@ -1,3 +1,14 @@
+// 導覽列ＪＳ
+document.getElementById('menuIcon').addEventListener('click', function() {
+  var navLinks = document.getElementById('navLinks');
+  if (navLinks.classList.contains('show')) {
+      navLinks.classList.remove('show');
+  } else {
+      navLinks.classList.add('show');
+  }
+});
+
+// 展區介紹
 function openArea(evt, cityName) {
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabcontent");

@@ -19,18 +19,24 @@
             <a href="#">劇團表演</a>
         </nav>
         <div>
-            <a class="nav-link" href="#">
-                <i class="bi bi-facebook p-2"></i>
-            </a>
-            <a class="nav-link" href="#">
-                <i class="bi bi-instagram p-2"></i>
-            </a>
+            <button class="login">Login</button>
+        </div>
+        <div class="menu-icon" id="menuIcon">
+            <i class="bi bi-list"></i>
+        </div>
+        <!-- 以下是版面縮小時會出現的導覽列 -->
+        <div class="nav-links" id="navLinks">
+            <a href="#">首頁</a>
+            <a href="#Exhibition">展覽</a>
+            <a href="#">工作坊</a>
+            <a href="#">劇團表演</a>
+            <a href="#">登入</a>
         </div>
     </header>
     <section class="exhibit-img">
         <img src="./img/展覽/music-island_01.jpg" alt="">
     </section>
-    <main>
+    <main class="row">
         <section class="main-section">
             <article>
                 <button class="hastag-btn">台北</button>
@@ -71,11 +77,13 @@
                     </article>
                     <article>
                         <h3>【我們的歌 我們的時代】</h3>
+                        <div class="video-container">
                         <iframe width="560" height="315"
                             src="https://www.youtube.com/embed/8F7EZPUG7FM?si=q40qU7lCn7TrjTs7"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
                         <p>這塊土地，用歌說故事已經超過一百年，曾經橫掃華文世界，影響過數以十億計的生命。不論是在威權時代，還是價值觀開放的今時，這些音樂人，這些歌，跨越了世代與時空，打破了國界與城市，生動鮮活的在每個人的生命中留下記憶的氣味。訴說市井日常也好，寄託大我情懷也罷；不論你是
                             Rocker 還是憤青，不論你是小清新還是追夢人，每個人心裡一定都有一首屬於自己的歌，一定會在這裡找到屬於自己的故事。
                             且讓我們張開耳朵，打開眼睛，一起進入流行音樂殿堂，仔細聆聽屬於這個島嶼的歌，經歷一趟豐盛的音樂旅程。</p>
@@ -105,7 +113,7 @@
                         </ul>
                     </article>
                     <hr>
-                    <article>
+                    <article class="area-intro">
                         <h2>展區介紹</h2>
                         <!-- Tab links -->
                         <div class="mytab">
@@ -237,14 +245,10 @@
                         </div>
                     </article>
                 </section>
-
-
-
-
             </article>
         </section>
 
-        <aside>
+        <aside class="side">
             <div class="exhibit-right-card">
                 <div class="right-card-img">
                     <div class="logoImg">

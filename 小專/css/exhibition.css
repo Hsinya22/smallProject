@@ -1,5 +1,8 @@
 /* 展覽第一頁style */
 /* 基本樣式 */
+/* * {
+    box-sizing: border-box;
+  } */
 body,
 html {
     background-color: #f8f6ed;
@@ -7,18 +10,28 @@ html {
     padding: 0;
     font-family: Arial, sans-serif;
 }
-
+/* 導覽列設定 */
 header {
     display: flex;
+    position: sticky;
+    z-index: 1000;
+    top: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     /* 使用 flexbox 布局 */
     align-items: center;
     border: 1px solid #1285c5;
     background-color: #f8f6ed;
     justify-content: space-between;
     padding: 10px 20px;
-
 }
-
+.navbar {
+    display: flex;
+    gap: 20px;
+}
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
 .navbar a {
     color: #1285c5;
     padding: 14px 20px;
@@ -31,18 +44,28 @@ header {
     transition: transform 0.3s ease;
     /* 字體浮動效果 */
 }
-
 header .nav-link {
     text-decoration: none;
     padding: 10px;
     color: #1285c5;
     font-size: 20px;
 }
-
 .navbar a:hover {
     color: black;
     transform: translateY(-3px);
     /* 字體上浮 */
+}
+header button{
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #1285c5;
+    border:1px solid #1285c5;
+}
+header button:hover{
+    background-color: #1285c5;
+    color: #fff;
 }
 
 /* 底線效果偽元素 */
@@ -63,26 +86,30 @@ header .nav-link {
     width: 100%;
     left: 0;
 }
-
-main {
-    /* background-color: #1285c5; */
-    max-width: 1400px;
-    margin: 10px auto;
+/* 導覽列漢堡圖示內部設計 */
+.social-media {
     display: flex;
-    width: 100%;
-    border-radius: 20px;
+    gap: 10px;
 }
-
-.main-section {
-    flex: 2;
+.nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    background-color:#1285c5;
     padding: 10px;
+    border-radius: 5px;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 0;
 }
 
-aside {
-    flex: 1;
-}
-
+/* 展覽主圖片 */
 .exhibit-img {
+    position: relative;
     background-color: #1285c5;
     max-width: 1400px;
     margin: 10px auto;
@@ -97,10 +124,42 @@ aside {
     object-fit: cover;
 }
 
+/* 展覽佈局 */
+/* 展覽主要佈局 */
+.row {
+    max-width: 1440px;
+    width: 100％;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* background-color: #8aad24;
+    overflow: hidden; */
+}
+
+.main-section {
+    flex: 70%;
+    width: 70%;
+    /* box-sizing: border-box; */
+}
+
+aside.side {
+    height: auto;
+    /* 距離視窗頂部20px，根據需要調整*/
+}
+.side {
+    flex: 30%;
+}
+
+/* 展覽右側卡片 */
 .exhibit-right-card {
-    border: 1px solid lightgrey;
+    position: sticky;
+    top: 100px;
+    background-color: #fff;
+    /* border: 1px solid lightgrey; */
     border-radius: 10px;
     /* height: 300px; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     padding: 30px;
     margin: 20px;
     text-align: center;
@@ -121,7 +180,6 @@ aside {
     border-radius: 10px;
 }
 
-
 .hastag-btn {
     background-color: #00AFB9;
     color: white;
@@ -132,12 +190,24 @@ aside {
     border-radius: 0 10px 10px 0;
 }
 
+/* 展覽中央卡片 */
+.exhibit-main-card {
+    /* background-color: lightgoldenrodyellow; */
+    flex-basis: 500px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
 .exhibit-info-card {
     border: 1px solid lightslategray;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    ;
     padding: 20px;
+}
+
+.exhibit-main-card h1,
+.exhibit-info-card h3 {
+    word-wrap: break-word;
 }
 
 .exhibit-info h3 {
@@ -150,6 +220,7 @@ aside {
 
 .exhibit-content {
     /* background-color: #00AFB9; */
+    max-width: 100%;
     border: 1px dashed #1285c5;
     border-radius: 10px;
     padding: 10px;
@@ -160,55 +231,203 @@ aside {
     color: #F07167;
     font-size: 20px;
     font-weight: bold;
+}
 
+.exhibit-intro {
+    max-width: 100%;
+    height: auto;
+    /* background-color: #ccc; */
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 的比例 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+/* 影片的比例調整 */
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    /* 去掉邊框 */
 }
 
 /* 展區介紹 */
+.area-intro {
+    /* background-color: #00AFB9; */
+    max-width: 100%;
+    /* 限制寬度 */
+    overflow-x: auto;
+    /* 加上這一行以確保內容在寬度不足時可以水平滾動 */
+    box-sizing: border-box;
+    /* 確保 padding 和 border 計算在內 */
+    padding: 16px;
+    /* 添加內邊距以防止內容貼邊 */
+    /* width: 1000px;
+    overflow: auto;
+    box-sizing: border-box; */
+}
+
 /* Style the tab */
 .mytab {
-    overflow: hidden;
+    overflow: auto;
+    white-space: nowrap;
+    /* overflow: hidden; */
+    width: 100%;
     border: 1px solid #ccc;
-    background-color: #f1f1f1;
-  }
-  
-  /* Style the buttons that are used to open the tab content */
-  .mytab button {
+    background-color: #83acc3;
+    box-sizing: border-box;
+
+}
+
+/* Style the buttons that are used to open the tab content */
+.mytab button {
     background-color: inherit;
-    float: left;
+    /* float: left; */
     border: none;
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
-  }
-  
-  /* Change background color of buttons on hover */
-  .mytab button:hover {
-    background-color: #ddd;
-  }
-  
-  /* Create an active/current tablink class */
-  .mytab button.active {
-    background-color: #ccc;
-  }
-  
-  /* Style the tab content */
-  .tabcontent {
+}
+
+/* Change background color of buttons on hover */
+.mytab button:hover {
+    background-color: #539cc3;
+}
+
+/* Create an active/current tablink class */
+.mytab button.active {
+    background-color: #1285c5;
+}
+
+/* Style the tab content */
+.tabcontent {
     display: none;
     padding: 6px 12px;
     border: 1px solid #ccc;
     border-top: none;
-  }
+}
 
-  /* tab content裡面的照片 */
-  .area-img{
-    background-color: #00AFB9;
+/* tab content裡面的照片 */
+.area-img {
+    /* background-color: #00AFB9; */
     width: 100%;
     height: 400px;
     overflow: hidden;
-  }
-  .area-img img{
-    width: 100%;
+}
+
+.area-img img {
+    max-width: 100%;
     height: 100%;
     object-fit: cover;
-  }
+}
+
+/* 基本內容響應式設計 */
+@media (max-width: 1200px) {
+
+    .main-section,
+    .side {
+        width: 100%;
+    }
+
+    .side {
+        margin-top: 20px;
+    }
+
+    header,
+    .navbar,
+    .exhibit-intro {
+        padding: 0 20px;
+    }
+
+    .exhibit-main-card h1 {
+        font-size: 24px;
+    }
+
+    .exhibit-info-card,
+    .exhibit-content {
+        flex-direction: column;
+    }
+
+    .tabcontent {
+        padding: 0 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        /* flex-direction: column; */
+        align-items: center;
+        padding: 16px 20px;
+    }
+    .navbar, .login{
+        display: none;
+    }
+    .menu-icon {
+        display: block;
+        color: #1285c5;
+    }
+    .nav-links.show {
+        display: flex;
+    }
+
+    .main-section,
+    .side {
+        padding: 0 10px;
+    }
+
+    .exhibit-main-card h1 {
+        font-size: 20px;
+    }
+
+    .exhibit-info-card,
+    .exhibit-content {
+        flex-direction: column;
+    }
+
+    .exhibit-info-card h3,
+    .exhibit-content p {
+        font-size: 14px;
+    }
+
+    .tablinks {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .area-img img {
+        width: 100%;
+    }
+    .exhibit-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar a {
+        font-size: 14px;
+    }
+
+    .exhibit-main-card h1 {
+        font-size: 18px;
+    }
+
+    .exhibit-info-card h3 {
+        font-size: 12px;
+    }
+
+    .tablinks {
+        font-size: 12px;
+        padding: 8px;
+    }
+}
