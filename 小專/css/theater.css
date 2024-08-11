@@ -106,236 +106,129 @@ header button:hover{
     text-decoration: none;
     padding: 5px 0;
 }
+/* 主頁面排版設定 */
 .myContainer{
     border: 1px solid #1285c5;
-    max-width: 1400px;
+    background-color: #ffffff49;
+    max-width: 980px;
     margin: 20px auto;
-    padding: 20px;
+    padding: 10px;
     box-sizing: border-box;
     border-radius: 25px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-/* 展覽主圖片 */
-.exhibit-img {
-    position: relative;
+/* 上方大圖容器 */
+.theater-img{
     /* background-color: #1285c5; */
-    max-width: 1400px;
+    position: relative;
+    max-width: auto;
     margin: 10px auto;
     text-align: center;
-    border-radius: 20px;
     overflow: hidden;
 }
-
-.exhibit-img img {
+.theater-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-
-/* 展覽佈局 */
-/* 展覽主要佈局 */
-.row {
-    max-width: 1440px;
-    width: 100％;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    /* background-color: #8aad24;
-    overflow: hidden; */
-}
-
-.main-section {
-    flex: 70%;
-    width: 70%;
-    /* box-sizing: border-box; */
-}
-
-aside.side {
-    height: auto;
-    /* 距離視窗頂部20px，根據需要調整*/
-}
-.side {
-    flex: 30%;
-}
-
-/* 展覽右側卡片 */
-.exhibit-right-card {
-    position: sticky;
-    top: 100px;
+.theater-content{
     background-color: #fff;
-    /* border: 1px solid lightgrey; */
-    border-radius: 10px;
-    /* height: 300px; */
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding: 30px;
-    margin: 20px;
+    padding: 10px;
+}
+.theater-text{
     text-align: center;
-    max-height: auto;
 }
-
-.rightcard-info {
-    position: relative;
-    margin-bottom: 30px;
+.theater-text:nth-of-type(1){
+    color: rgb(192,13,35);
 }
-
-.exhibit-right-card a {
-    /* display: block; */
-    text-decoration: none;
-    color: white;
-    background-color: #1285c5;
-    padding: 20px;
-    border-radius: 10px;
+.title01,.title02{
+    color:#1285c5;
 }
-
-.hastag-btn {
-    background-color: #00AFB9;
-    color: white;
-    font-size: 12px;
-    border: none;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 0 10px 10px 0;
+.story-info{
+    /* background-color: #1285c5; */
+    max-width: 780px;
+    margin: 10px auto;
+    text-align: center;
 }
-
-/* 展覽中央卡片 */
-.exhibit-main-card {
-    /* background-color: lightgoldenrodyellow; */
-    flex-basis: 500px;
-    max-width: 100%;
-    box-sizing: border-box;
+.story-info p{
+    text-align: start;
 }
-
-.exhibit-info-card {
-    border: 1px solid lightslategray;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    padding: 20px;
+.zoom-text {
+    color: rgb(192,13,35);
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    font-size: 32px; /* 初始字體大小 */
+    opacity: 0; /* 初始透明度，文字隱藏 */
+    transition: font-size 0.5s ease, opacity 0.5s ease; /* 添加過渡效果 */
 }
-
-.exhibit-main-card h1,
-.exhibit-info-card h3 {
-    word-wrap: break-word;
+.zoom-text01{
+    opacity: 0;
+    transition: font-size 0.5s ease, opacity 0.5s ease; /* 添加過渡效果 */
 }
-
-.exhibit-info h3 {
-    color: #007598;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    /* 根據需要調整間距 */
+.zoom-text.visible{
+    opacity: 1; /* 文字浮現 */
 }
-
-.exhibit-content {
-    /* background-color: #00AFB9; */
-    max-width: 100%;
-    border: 1px dashed #1285c5;
-    border-radius: 10px;
-    padding: 10px;
-
+.zoom-text01.visible{
+    opacity: 1;
+    
 }
-
-.exhibit-intro span {
-    color: #F07167;
-    font-size: 20px;
-    font-weight: bold;
+/* 演員圖片 */
+.myActor{
+    display: flex; /* 使用 Flexbox 佈局 */
+    justify-content: center; /* 控制對齊方式，可選 flex-start, center, flex-end */
+    flex-wrap: wrap; /* 如果空間不足，圖片會換行 */
 }
-
-.exhibit-intro {
-    max-width: 100%;
-    height: auto;
-    /* background-color: #ccc; */
+.myActor div{
+    text-align: center;
 }
-
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    /* 16:9 的比例 */
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
-}
-
-/* 影片的比例調整 */
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 0;
-    /* 去掉邊框 */
-}
-
-/* 展區介紹 */
-.area-intro {
-    /* background-color: #00AFB9; */
-    max-width: 100%;
-    /* 限制寬度 */
-    overflow-x: auto;
-    /* 加上這一行以確保內容在寬度不足時可以水平滾動 */
-    box-sizing: border-box;
-    /* 確保 padding 和 border 計算在內 */
-    padding: 16px;
-    /* 添加內邊距以防止內容貼邊 */
-    /* width: 1000px;
-    overflow: auto;
-    box-sizing: border-box; */
-}
-
-/* Style the tab */
-.mytab {
-    overflow: auto;
-    white-space: nowrap;
-    /* overflow: hidden; */
-    width: 100%;
-    border: 1px solid #ccc;
-    background-color: #83acc3;
-    box-sizing: border-box;
-
-}
-
-/* Style the buttons that are used to open the tab content */
-.mytab button {
-    background-color: inherit;
-    /* float: left; */
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-}
-
-/* Change background color of buttons on hover */
-.mytab button:hover {
-    background-color: #539cc3;
-}
-
-/* Create an active/current tablink class */
-.mytab button.active {
-    background-color: #1285c5;
-}
-
-/* Style the tab content */
-.tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
-}
-
-/* tab content裡面的照片 */
-.area-img {
-    /* background-color: #00AFB9; */
-    width: 100%;
-    height: 400px;
-    overflow: hidden;
-}
-
-.area-img img {
-    max-width: 100%;
-    height: 100%;
+.myActor img{
+    width: 150px; /* 固定每張圖片的寬度 */
+    height: 150px; 
     object-fit: cover;
+    margin: 10px; /* 控制圖片之間的間距 */
+    border-radius: 50%;
+    object-position: top;
+    margin-bottom: 0;
+}
+.myActor h3{
+    margin-top: 0;
+}
+.myContainer h1{
+    color:  rgb(192,13,35);
+    text-align: center;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+.actors h3,
+.actors p{
+    text-align: center;
+}
+
+.show-info{
+    max-width: 980px;
+    margin: 10px auto;
+    text-align: center;
+}
+.show-info div>p{
+    text-align: center;
+}
+.map{
+    text-align: center;
+    width: auto;
+    height: auto;
+    /* background-color: #1285c5; */
+}
+.show-info a{
+    font-size: 16px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #1285c5;
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 25px;
+}
+.show-info a:hover{
+    border:1px solid #1285c5;
+    background-color: #fff;
+    color: #1285c5;
 }
 
 /* 基本內容響應式設計 */
@@ -419,7 +312,12 @@ aside.side {
         height: 100%;
         object-fit: cover;
     }
+    .map{
+        width: 100%;
+        overflow: auto;
+    }
 }
+
 
 @media (max-width: 480px) {
     .navbar a {
@@ -437,5 +335,9 @@ aside.side {
     .tablinks {
         font-size: 12px;
         padding: 8px;
+    }
+    .map{
+        width: 100%;
+        overflow: auto;
     }
 }
