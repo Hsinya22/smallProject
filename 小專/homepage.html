@@ -13,7 +13,7 @@
 <body>
 
     <!-- 導覽列 -->
-    <header class="topnav" id="myTopnav">
+    <header>
         <div class="myLogo">logo</div>
         <nav class="navbar">
             <a href="#">首頁</a>
@@ -22,13 +22,18 @@
             <a href="#">劇團表演</a>
         </nav>
         <div>
-            <a class="nav-link" href="#">
-                <i class="bi bi-facebook p-2"></i>
-            </a>
-            <a class="nav-link" href="#">
-                <i class="bi bi-instagram p-2"></i>
-            </a>
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+            <button class="login">Login</button>
+        </div>
+        <div class="menu-icon" id="menuIcon">
+            <i class="bi bi-list"></i>
+        </div>
+        <!-- 以下是版面縮小時會出現的導覽列 -->
+        <div class="nav-links" id="navLinks">
+            <a href="#">首頁</a>
+            <a href="#Exhibition">展覽</a>
+            <a href="#">工作坊</a>
+            <a href="#">劇團表演</a>
+            <a href="#">登入</a>
         </div>
     </header>
 

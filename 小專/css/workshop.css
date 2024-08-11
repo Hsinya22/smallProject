@@ -1,8 +1,3 @@
-/* 展覽第一頁style */
-/* 基本樣式 */
-/* * {
-    box-sizing: border-box;
-  } */
 body,
 html {
     background-color: #f8f6ed;
@@ -110,150 +105,225 @@ header button:hover{
 .myContainer{
     border: 1px solid #1285c5;
     background-color: #ffffff49;
-    max-width: 980px;
+    max-width: 1400px;
     margin: 20px auto;
-    padding: 10px;
+    /* padding: 0 10px; */
     box-sizing: border-box;
     border-radius: 25px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-/* 上方大圖容器 */
-.theater-img{
-    /* background-color: #1285c5; */
-    position: relative;
-    max-width: auto;
-    margin: 10px auto;
-    text-align: center;
     overflow: hidden;
 }
-.theater-img img {
+
+.work-img{
+    background-color: #1285c5;
+    max-width: 1400px;
+    width: auto;
+}
+.work-img img{
     width: 100%;
-    height: 100%;
     object-fit: cover;
-}
-.theater-content{
-    background-color: #fff;
-    padding: 10px;
-}
-.theater-text{
-    text-align: center;
-}
-.theater-text:nth-of-type(1){
-    color: rgb(192,13,35);
-}
-.title01,.title02{
-    color:#1285c5;
-}
-.story-info{
-    /* background-color: #1285c5; */
-    max-width: 780px;
-    margin: 10px auto;
-    text-align: center;
-}
-.story-info p{
-    text-align: start;
-}
-.zoom-text {
-    color: rgb(192,13,35);
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    font-size: 32px; /* 初始字體大小 */
-    opacity: 0; /* 初始透明度，文字隱藏 */
-    transition: font-size 0.5s ease, opacity 0.5s ease; /* 添加過渡效果 */
-}
-.zoom-text01{
-    opacity: 0;
-    transition: font-size 0.5s ease, opacity 0.5s ease; /* 添加過渡效果 */
-}
-.zoom-text.visible{
-    opacity: 1; /* 文字浮現 */
-}
-.zoom-text01.visible{
-    opacity: 1;
-    
-}
-.theater-video{
-    margin: 0 auto;
-    width: 560px;
-    height: 314px;
-}
-/* 演員圖片 */
-.myActor{
-    display: flex; /* 使用 Flexbox 佈局 */
-    justify-content: center; /* 控制對齊方式，可選 flex-start, center, flex-end */
-    flex-wrap: wrap; /* 如果空間不足，圖片會換行 */
-}
-.myActor div{
-    text-align: center;
-}
-.myActor img{
-    width: 150px; /* 固定每張圖片的寬度 */
-    height: 150px; 
-    object-fit: cover;
-    margin: 10px; /* 控制圖片之間的間距 */
-    border-radius: 50%;
-    object-position: top;
-    margin-bottom: 0;
-}
-.myActor h3{
-    margin-top: 0;
-}
-.myContainer h1{
-    color:  rgb(192,13,35);
-    text-align: center;
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-}
-.actors h3,
-.actors p{
-    text-align: center;
 }
 
-.show-info{
-    max-width: 980px;
-    margin: 10px auto;
+.workshop-intro{
     text-align: center;
 }
-.show-info div>p{
-    text-align: center;
+.workshop-intro h1{
+    color: #606C38;
 }
-.map{
-    text-align: center;
-    width: auto;
-    height: auto;
-    /* background-color: #1285c5; */
+.workshop-intro h4{
+    display: inline;
+    background-color: #bc6c25;
 }
-.show-info a{
-    font-size: 16px;
-    text-decoration: none;
-    color: #fff;
-    background-color: #1285c5;
+
+.workshop-content{
+    max-width: 1400px;
+    width: 100％;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.workshop01-info{
+/* background-color: #bc6c25; */
+flex: 50%;
+width: 50%;
+}
+.workshop-map{
+    /* background-color: #606C38; */
+    flex: 50%;
+    width: 50%;
+}
+.info-text{
+    margin-left: 20px;
+    margin-top: 20px;
     padding: 10px;
-    margin-bottom: 30px;
-    border-radius: 25px;
+    border: 1px dashed #606C38;
+    
 }
-.show-info a:hover{
-    border:1px solid #1285c5;
-    background-color: #fff;
-    color: #1285c5;
+.info-text h4{
+    display: inline;
+    color: #fff;
+    background-color: #606C38;
 }
+.map-link{
+    margin: 0 auto;
+    justify-content:center;
+    width:600px;
+    height:450px;
+    padding: 10px;
+}
+.time-line{
+    /* background-color: #1285c5; */
+    max-width: 980px;
+    margin: 20px auto;
+}
+.time-line h4{
+    display: inline;
+    color: #fff;
+    background-color: #606C38;
+}
+table,tbody,td{
+    border:2px solid #606C38;
+    border-collapse: collapse;
+}
+table{
+    margin: 20px auto;
+    width: 980px;
+    text-align: center;
+}
+tr td:nth-of-type(1){
+    width: 34%;
+}
+
+/* 圖片 */
+.active-img{
+    /* background-color: #1285c5; */
+    border: 3px solid #606C38;
+    max-width: 980px;
+    margin: 20px auto;
+    overflow: hidden;
+    width: 100%;
+    max-height: auto;
+}
+/* * {
+    box-sizing: border-box;
+  } */
+  
+  /* Position the image container (needed to position the left and right arrows) */
+  .container {
+    position: relative;
+  }
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
+    cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: #bc6c25;
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+
+  /* Container for image text */
+  .caption-container {
+    text-align: center;
+    background-color: #606C38;
+    padding: 2px 16px;
+    color: white;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Six columns side by side */
+  .column {
+    float: left;
+    width: 16.66%;
+    object-fit: cover;
+    overflow: hidden;
+  }
+  
+  /* Add a transparency effect for thumnbail images */
+  .demo {
+    opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+
 
 /* 基本內容響應式設計 */
 @media (max-width: 1200px) {
 
-    .main-section,
-    .side {
-        width: 100%;
-    }
 
-    .side {
-        margin-top: 20px;
+    .workshop-map {
+        width: 100%;
+        margin: 20px;
     }
 
     header,
     .navbar,
-    .exhibit-intro {
+    .workshop-content {
         padding: 0 20px;
     }
-
+    .time-line{
+        max-width: 780px;
+        margin: 20px auto;
+    }
+    table{
+        margin: 20px auto;
+        width: 100%;
+        text-align: center;
+    }
+    .active-img{
+        max-width: 780px;
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
     .exhibit-main-card h1 {
         font-size: 24px;
     }
@@ -284,16 +354,28 @@ header button:hover{
     .nav-links.show {
         display: flex;
     }
-    .theater-video{
-        margin: 0 auto;
-        width: 480px;
-        height: 314px;
+.workshop-map{
+    width: 100%;
+    margin: 0 20px;
+}
+.time-line{
+    max-width: auto;
+    margin: 20px;
+}
+table{
+    margin: 20px auto;
+    width: 100%;
+    text-align: center;
+}
+    .map-link {
+        width: 100%;
+        justify-content: center;
     }
-    .main-section,
-    .side {
-        padding: 0 10px;
+    .active-img{
+        width: auto;
+        margin: 0 20px;
+        justify-content: center;
     }
-
     .exhibit-main-card h1 {
         font-size: 20px;
     }
@@ -321,17 +403,13 @@ header button:hover{
         height: 100%;
         object-fit: cover;
     }
-    .map{
-        width: 100%;
-        overflow: auto;
-    }
 }
-
 
 @media (max-width: 480px) {
     .navbar a {
         font-size: 14px;
     }
+    
 
     .exhibit-main-card h1 {
         font-size: 18px;
@@ -345,14 +423,4 @@ header button:hover{
         font-size: 12px;
         padding: 8px;
     }
-    .map{
-        width: 100%;
-        overflow: auto;
-    }
-    .theater-video{
-        margin: 0 auto;
-        width: auto;
-        height: 314px;
-    }
 }
-
