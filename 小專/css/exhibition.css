@@ -106,7 +106,15 @@ header button:hover{
     text-decoration: none;
     padding: 5px 0;
 }
-
+.myContainer{
+    border: 1px solid #1285c5;
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
 /* 展覽主圖片 */
 .exhibit-img {
     position: relative;
