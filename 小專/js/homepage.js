@@ -1,13 +1,12 @@
-// 導覽列
-function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "topnav") {
-      x.className += " responsive";
+// 導覽列ＪＳ
+document.getElementById('menuIcon').addEventListener('click', function() {
+    var navLinks = document.getElementById('navLinks');
+    if (navLinks.classList.contains('show')) {
+        navLinks.classList.remove('show');
     } else {
-      x.className = "topnav";
+        navLinks.classList.add('show');
     }
-  }
-
+  });
 
 // 簡單的輪播圖功能
 const images = document.querySelectorAll('.carousel img');
@@ -123,4 +122,12 @@ document.addEventListener("DOMContentLoaded", function() {
 // 展覽卡片跳新分頁
 function openNewTabExhibit02() {
     window.open('exhibition_01.html', '_blank');
+}
+// 劇場表演卡片跳新分頁
+function openNewTabShowcard02() {
+    window.open('theater_01.html', '_blank');
+}
+//工作坊卡片跳新分頁
+function openNewTabWorkshop02() {
+    window.open('workshop_01.html', '_blank');
 }

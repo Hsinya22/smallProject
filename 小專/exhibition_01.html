@@ -4,19 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>music is island</title>
+    <title>唱我們的歌流行音樂故事展</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css/exhibition.css">
 </head>
 
 <body>
     <header>
-        <div class="myLogo">logo</div>
+        <div class="myLogo">
+            <img src="./img/LOGO.svg" alt="">
+        </div>
         <nav class="navbar">
-            <a href="#">首頁</a>
-            <a href="#Exhibition">展覽</a>
-            <a href="#">工作坊</a>
-            <a href="#">劇團表演</a>
+            <a href="./homepage.html" target="_blank">首頁</a>
+            <a href="./homepage.html#Exhibition" target="_blank">展覽</a>
+            <a href="./homepage.html#theater-show" target="_blank">劇團表演</a>
+            <a href="./homepage.html#Workshop" target="_blank">工作坊</a>
         </nav>
         <div>
             <button class="login">Login</button>
@@ -26,10 +28,10 @@
         </div>
         <!-- 以下是版面縮小時會出現的導覽列 -->
         <div class="nav-links" id="navLinks">
-            <a href="#">首頁</a>
-            <a href="#Exhibition">展覽</a>
-            <a href="#">工作坊</a>
-            <a href="#">劇團表演</a>
+            <a href="./homepage.html" target="_blank">首頁</a>
+            <a href="./homepage.html#Exhibition" target="_blank">展覽</a>
+            <a href="./homepage.html#theater-show" target="_blank">劇團表演</a>
+            <a href="./homepage.html#Workshop" target="_blank">工作坊</a>
             <a href="#">登入</a>
         </div>
     </header>
@@ -257,9 +259,10 @@
                     <div class="right-card-img">
                         <div class="logoImg">
                             <img src="./img/展覽/北流logo.svg" alt="">
-                        </div>
+                        <!-- </div>
                         <h3>台北流行音樂中心</h3>
-                    </div>
+                    </div> -->
+                    <hr>
                     <div class="rightcard-info">
                         <strong>唱 我們的歌 流行音樂故事展 MUSIC, ISLAND, STORIES: Pop Music in Taiwan</strong>
                         <p>2021/9/18(六) - 2026/9/20(日)</p>
@@ -269,6 +272,35 @@
             </aside>
         </main>
     </div>
+
+    <!-- 頁脚 -->
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="myLogo01">
+                    <img src="./img/LOGO.svg" alt="">
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>聯繫我們</h4>
+                <p>電子郵件: v848clmp20@gmail.com</p>
+                <p>電話: (02) 236-5566</p>
+            </div>
+            <div class="footer-section">
+                <h4>社群平台</h4>
+                <ul>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 藝文日誌. 練習使用。</p>
+        </div>
+    </footer>
+
     <script src="./js/exhibition.js"></script>
 </body>
 

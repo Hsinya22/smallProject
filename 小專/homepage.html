@@ -7,19 +7,21 @@
     <title>藝文活動首頁</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css/homepage_style.css">
-    <script src="./js/homepage.js" defer></script>
+
 </head>
 
 <body>
 
     <!-- 導覽列 -->
     <header>
-        <div class="myLogo">logo</div>
+        <div class="myLogo">
+            <img src="./img/LOGO.svg" alt="">
+        </div>
         <nav class="navbar">
             <a href="#">首頁</a>
             <a href="#Exhibition">展覽</a>
-            <a href="#">工作坊</a>
-            <a href="#">劇團表演</a>
+            <a href="#theater-show">劇團表演</a>
+            <a href="#Workshop">工作坊</a>
         </nav>
         <div>
             <button class="login">Login</button>
@@ -31,8 +33,8 @@
         <div class="nav-links" id="navLinks">
             <a href="#">首頁</a>
             <a href="#Exhibition">展覽</a>
-            <a href="#">工作坊</a>
-            <a href="#">劇團表演</a>
+            <a href="#theater-show">劇團表演</a>
+            <a href="#Workshop">工作坊</a>
             <a href="#">登入</a>
         </div>
     </header>
@@ -58,7 +60,7 @@
     </div>
 
     <section class="card-section">
-        <h2 class="mytitle" id="Exhibition">最新展覽</h2>
+        <h1 class="mytitle" id="Exhibition">最新展覽</h1>
         <div class="card">
             <div class="card-img">
                 <img src="./img/展覽/ocean_01.jpeg" alt="Exhibition 1">
@@ -70,7 +72,7 @@
             </div>
         </div>
         <div class="card" onclick="openNewTabExhibit02()">
-            <div class="card-img" >
+            <div class="card-img">
                 <img src=".//img/展覽/music-island_03.jpeg" alt="Exhibition 2">
             </div>
             <div class="card-info">
@@ -93,8 +95,8 @@
                 <img src="./img/展覽/東門町_01.webp" alt="Exhibition 4">
             </div>
             <div class="card-info">
-                <h3>展覽名稱 4</h3>
-                <p>展覽資訊描述 4</p>
+                <h3>「東門町 1923」開幕首展：林臥雲文學紀念展《臥雲吟草》</h3>
+                <p>從臺北旅遊至嘉義的沿途人文風景，期待以「萬山倒影」、《嘉義地理歌》兩件作品，讓觀展民眾以作品開展文學旅程。</p>
             </div>
         </div>
         <div class="card">
@@ -102,15 +104,15 @@
                 <img src="./img/展覽/裸花蓮_03.webp" alt="Exhibition 4">
             </div>
             <div class="card-info">
-                <h3>展覽名稱 4</h3>
-                <p>展覽資訊描述 4</p>
+                <h3>2024 花蓮城市空間藝術節</h3>
+                <p>以「裸花蓮 Raw Hualien」為主題， 強調材質的原始、直覺的互動、以及惜物與循環的三大概念，呈現跨領域藝術節的多樣面貌。</p>
             </div>
         </div>
     </section>
-    <hr>
+    <hr id="theater-show">
     <!-- 劇團表演 -->
     <section class="show-section" id="myShow">
-        <h2 class="mytitle">劇場表演</h2>
+        <h1 class="mytitle">劇場表演</h1>
         <div class="show-card">
             <div class="show-img">
                 <img src="./img/劇場/丹麥倒影劇團_01.jpeg" alt="丹麥倒影劇團_01.jpeg">
@@ -121,7 +123,7 @@
                 <p class="bi bi-geo-alt">台中</p>
             </div>
         </div>
-        <div class="show-card">
+        <div class="show-card" onclick="openNewTabShowcard02()">
             <div class="show-img">
                 <img src="./img/劇場/星星戲樂_01.jpeg" alt="星星戲樂_01.jpeg">
             </div>
@@ -153,12 +155,12 @@
             </div>
         </div>
     </section>
-    <hr>
+    <hr id="Workshop">
     <!-- 工作坊 -->
     <section class="workshop-section">
-        <h2 class="mytitle">工作坊</h2>
+        <h1 class="mytitle">工作坊</h1>
         <div class="myWrapper">
-            <button id="Left" class="arrow myleft"">&#10094;</button>
+            <button id="Left" class="arrow myleft">&#10094;</button>
             <div class=" myCarousel">
                 <div class="workshop-card">
                     <div class="workshop-img">
@@ -169,7 +171,7 @@
                         <p>經莫拉克風災重建後，思考土地與與人的關係，來寶來不只溫泉，還有深度的體驗行程
                             炎炎夏日中，散步享受森林帶來的芬多精。
                             這次跟我們一起到森林避暑吧！</p>
-                        <button class="action-btn">報名中</button>
+                        <a href="https://www.accupass.com/eflow/ticket/2407210305218422793540" target="_blank" class="action-btn">報名中</a>
                     </div>
                 </div>
                 <div class="workshop-card">
@@ -177,23 +179,28 @@
                         <img src="./img/工作坊/出城啦來去離島住一晚_01.jpg" alt="" draggable="false">
                     </div>
                     <div class="workshop-info">
-                        <h4>南方出走日記 I'm Off Then｜手作步道 X 工作假期</h4>
-                        <p>經莫拉克風災重建後，思考土地與與人的關係，來寶來不只溫泉，還有深度的體驗行程
-                            炎炎夏日中，散步享受森林帶來的芬多精。
-                            這次跟我們一起到森林避暑吧！</p>
-                        <button class="action-btn">報名中</button>
+                        <h4>出城啦～青年們！來去離島住一晚｜地方創生轉譯工作坊</h4>
+                        <p>深入澎湖在地，透過互動訪談、體驗，觀察議題，瞭解在地現況，盤點在地魅力。
+                            透過講師及隊輔引導，進行深度的田野調查及訪談，共創提案提出初步構想。
+                        </p>
+                        <a href="https://www.accupass.com/eflow/ticket/2407020247011237129289" target="_blank" class="action-btn">報名中</a>
                     </div>
                 </div>
-                <div class="workshop-card">
+                <div class="workshop-card" onclick="openNewTabWorkshop02()">
                     <div class="workshop-img">
                         <img src="./img/工作坊/嘉義老屋活化_00.jpg" alt="" draggable="false">
                     </div>
                     <div class="workshop-info">
-                        <h4>南方出走日記 I'm Off Then｜手作步道 X 工作假期</h4>
-                        <p>經莫拉克風災重建後，思考土地與與人的關係，來寶來不只溫泉，還有深度的體驗行程
-                            炎炎夏日中，散步享受森林帶來的芬多精。
-                            這次跟我們一起到森林避暑吧！</p>
-                        <button class="action-btn">報名中</button>
+                        <h4>南方出走日記 I'm Off Then|老屋活化 × 永續經濟 x 工作假期</h4>
+                        <p>嘉義市木都文化：嘉義老屋魅力談
+                            <br>
+                            生活感走讀散策：深度走讀二通街
+                            <br>
+                            手作溫度小木作：小木作DIY
+                            <br>
+                            老屋的新風貌：老屋活化共創發想
+                        </p>
+                        <a href="https://www.accupass.com/eflow/ticket/2407020247011237129289" target="_blank" class="action-btn">報名中</a>
                     </div>
                 </div>
                 <div class="workshop-card">
@@ -201,27 +208,25 @@
                         <img src="./img/工作坊/大家書房_00.jpg" alt="" draggable="false">
                     </div>
                     <div class="workshop-info">
-                        <h4>南方出走日記 I'm Off Then｜手作步道 X 工作假期</h4>
-                        <p>經莫拉克風災重建後，思考土地與與人的關係，來寶來不只溫泉，還有深度的體驗行程
-                            炎炎夏日中，散步享受森林帶來的芬多精。
-                            這次跟我們一起到森林避暑吧！</p>
-                        <button class="action-btn">報名中</button>
+                        <h4>書房玩手作 <br>大家書房-馬賽克拼貼杯墊</h4>
+                        <p>花磚是眷村裡特別的存在，象徵著過去年代的繁榮，現今的我們身處眷村老房裡，將帶領大家用馬賽克風格的拼貼方式來製作自己獨一無二的拼貼花磚。
+                        </p>
+                        <a href="https://forms.gle/NF7eFpuX3VRXqUN49" target="_blank" class="action-btn">報名中</a>
                     </div>
                 </div>
                 <div class="workshop-card">
                     <div class="workshop-img">
-                        <img src="./img/工作坊/大家書房_00.jpg" alt="" draggable="false">
+                        <img src="./img/工作坊/大家書房_01.jpg" alt="" draggable="false">
                     </div>
                     <div class="workshop-info">
-                        <h4>南方出走日記 I'm Off Then｜手作步道 X 工作假期</h4>
-                        <p>經莫拉克風災重建後，思考土地與與人的關係，來寶來不只溫泉，還有深度的體驗行程
-                            炎炎夏日中，散步享受森林帶來的芬多精。
-                            這次跟我們一起到森林避暑吧！</p>
-                        <button class="action-btn">報名中</button>
+                        <h4>大家書房-一起來桌遊</h4>
+                        <p>忠義社區的眷村二代-輝哥，從孩子小時候開始，就把桌遊當成是家裡每週固定的小小儀式，在這個特別的時間裡，大家放下手邊工作，
+                            就是要相聚一起上桌玩樂，這難能可貴的時光也為他們留下了許多美好回憶。</p>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfayhbkHgoNVKOnRL2KVxPtk5tdqiDgr0sW229tAyV-k-Fnyw/viewform" target="_blank" class="action-btn">報名中</a>
                     </div>
                 </div>
-        </div>
-        <button id="Right" class="arrow myright">&#10095;</>
+            </div>
+            <button id="Right" class="arrow myright">&#10095;</button>
         </div>
     </section>
 
@@ -231,16 +236,17 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
-                <h4>關於我們</h4>
-                <p>這裡是關於我們的簡短介紹。</p>
+                <div class="myLogo01">
+                    <img src="./img/LOGO.svg" alt="">
+                </div>
             </div>
             <div class="footer-section">
                 <h4>聯繫我們</h4>
-                <p>電子郵件: info@example.com</p>
-                <p>電話: (123) 456-7890</p>
+                <p>電子郵件: v848clmp20@gmail.com</p>
+                <p>電話: (02) 236-5566</p>
             </div>
             <div class="footer-section">
-                <h4>社交媒體</h4>
+                <h4>社群平台</h4>
                 <ul>
                     <li><a href="#">Facebook</a></li>
                     <li><a href="#">Twitter</a></li>
@@ -249,12 +255,11 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 你的網站名稱. 保留所有權利。</p>
+            <p>&copy; 2024 藝文日誌. 練習使用。</p>
         </div>
     </footer>
 
     <script src="./js/homepage.js"></script>
-
 </body>
 
 </html>
