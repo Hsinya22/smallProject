@@ -1,5 +1,5 @@
-@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
 
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&family=Noto+Sans+TC:wght@100..900&family=Noto+Serif+TC:wght@200..900&display=swap');
 body,
 html {
     background-color: #f8f6ed;
