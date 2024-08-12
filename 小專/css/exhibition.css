@@ -227,6 +227,15 @@ aside.side {
     gap: 8px;
     /* 根據需要調整間距 */
 }
+.exhibit-info a {
+    text-decoration: none;
+    color: #007598;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* 根據需要調整間距 */
+    cursor: pointer;
+}
 
 .exhibit-content {
     /* background-color: #00AFB9; */
@@ -345,7 +354,9 @@ aside.side {
     background-color: #f8f6ed;
     width: 200px;
     padding: 10px;
-    margin-top: 20%;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 50px;
 }
 .myLogo01 img{
     width: 100%;

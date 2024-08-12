@@ -346,7 +346,10 @@ header button:hover {
 .myCarousel::-webkit-scrollbar {
     display: none;
 }
-
+.workshop-card{
+    width: auto;
+    overflow: hidden;
+}
 .myCarousel :where(.workshop-card, .workshop-img) {
     /* display: flex; */
     align-items: center;
@@ -371,7 +374,10 @@ header button:hover {
     scroll-snap-align: start;
     cursor: pointer;
     width: 98%;
-    margin: 10px;
+    /* max-width:300px;
+    max-height: 400px; */
+ 
+    margin: 10px auto;
     /* padding: 20px; */
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -385,7 +391,13 @@ header button:hover {
 }
 
 .workshop-info {
-    padding: 10px;
+    padding: 5px 10px;
+    max-width: 400px;
+    overflow: hidden; /* 隱藏超過最大高度的文字 */
+    text-overflow: ellipsis; /* 用省略號表示被截斷的文字 */
+    display: -webkit-box; /* 用於多行省略號 */
+    -webkit-line-clamp: 4; /* 顯示的行數 */
+    -webkit-box-orient: vertical; /* 垂直排列子元素 */
 }
 
 .workshop-img {
@@ -397,7 +409,7 @@ header button:hover {
 
 .workshop-img img {
     width: 100%;
-    height: 100%;
+    height: 200px;
     object-fit: cover;
     display: block;
 }
@@ -453,7 +465,9 @@ header button:hover {
     background-color: #f8f6ed;
     width: 200px;
     padding: 10px;
-    margin-top: 20%;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 50px;
 }
 .myLogo01 img{
     width: 100%;
@@ -475,6 +489,7 @@ header button:hover {
 .footer-section {
     flex: 1 1 200px;
     margin: 10px;
+
 }
 
 .footer-section h4 {
